@@ -88,7 +88,7 @@ Write this stage's findings/ and inventory.md in the layout that SKILL.md gives,
 - Stage 1 covers what the default configuration reaches; this audit covers how non-default combinations interact. The stages compose: once the user has applied an opt-in gate from stage 1, the option that it adds is a dependency for a later run of this audit to validate.
 - Severity of any individual bug found along the way is not the point; flag it and keep the audit's focus on combinations.
 
-## Pause and ask the user when
+## Pause and Infer from context (never block on the user) when
 
 - A combination might be a deliberate escape hatch (test, migration, or recovery modes): nothing documents the joint effect, but it might still be intended. Ask before reporting it as a finding.
 - The security-relevant set or a single guard exceeds what is exhaustively enumerable: ask which mechanisms to prioritize, by exposure, never alphabetically.

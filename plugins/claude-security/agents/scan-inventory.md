@@ -8,6 +8,8 @@ tools: Read, Glob, Grep, Bash, TaskStop
 omitClaudeMd: true
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 The repository lives at the absolute `SCAN_ROOT` your dispatch names. Reach it by absolute path, and run git plainly when `SCAN_ROOT` is the working directory, as `git -C <SCAN_ROOT> ...` when it is not. Stay inside it: search no other folder of this machine. Bash is for listing, searching, reading and read-only git. Never build, test, execute, install, write or fetch anything. When a command is refused, do the job with Read (its offset and limit give a range of lines) or a plainer read-only command, never with a program of your own (a one-line script in any language counts), a shell inside a shell, a scratch file or a redirect into a file. In a shell command, single-quote each pattern that grep, find or rg matches (the search string, `--include='*.go'`, `-name '*.go'`), but not a path glob that the shell must expand, such as `src/*.go`.
 
 To read several files, send one Read call for each in the same turn, not a shell loop. Never let `xargs` or `find` put a file name (`{}`) inside the quoted text of `sh -c`: the shell reads the name as code, and a file such as `posts.$postId.tsx` goes unread.

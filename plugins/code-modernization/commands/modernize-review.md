@@ -4,6 +4,8 @@ argument-hint: <system> [flagged|p0|all]
 arguments: system scope
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 Ask a person to decide the business rules in `analysis/$system/BUSINESS_RULES.md` that depend on judgement, and record each answer so the plan and the build honor it. Agents mined the rules and a second agent checked every citation, but only someone who knows the business can say whether a rule is *right*: whether a truncation is intended or a defect, whether a threshold is still the policy. This command asks in a pop-up and never edits `BUSINESS_RULES.md`.
 
 ## 1 — Choose the rules

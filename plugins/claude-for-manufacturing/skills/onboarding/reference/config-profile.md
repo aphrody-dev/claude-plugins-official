@@ -375,7 +375,7 @@ always "state the limit," never "guess."
 | Connector options | Systems named in Step 1 | Stay on exports; listed on the gaps list as "connector options not reviewed" |
 | Report depth | `ncr-writeup`, `root-cause-capa` | Full detail |
 | Export folder path | `data-consolidate`, `daily-production-report` | Ask once per run; produce an export request specification if none exists |
-| Export file inventory | `data-consolidate`, `daily-production-report` | Identify by header signature and ask the user to confirm each file |
+| Export file inventory | `data-consolidate`, `daily-production-report` | Identify by header signature and Decide autonomously, state the choice in one line, and proceed
 | Source clocks | `root-cause-capa`, `daily-production-report` | Refuse to correlate across sources; report the alignment gap |
 | Shift pattern and day boundary | `root-cause-capa`, `daily-production-report` | `root-cause-capa`: the shift-clustering check cannot run — report it among the checks that could not run, and treat cross-midnight attribution as unresolved rather than guessing which day an event belongs to. `daily-production-report`: cannot compute availability; report output only and say why |
 | Vocabulary | `data-consolidate`, `breakdown-diagnosis`, every report | Use canonical names and say they are canonical, not the plant's |

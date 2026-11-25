@@ -4,6 +4,8 @@ description: Set up and run Claude Code office hours, including the calendar eve
 argument-hint: "[optional: setup, agenda, or write-up]"
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 ## Start here
 
 Say in one line what you'll make: an office hours invite and question template, an agenda for the next session, or a write-up of the last one.

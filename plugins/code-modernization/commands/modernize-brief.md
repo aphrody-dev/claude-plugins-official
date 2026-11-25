@@ -4,6 +4,8 @@ argument-hint: <system> [target-stack]
 arguments: system target_stack
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 Synthesize everything in `analysis/$system/` into a **Modernization Brief**: the single
 document a steering committee approves and engineering executes. Target stack:
 `$target_stack` (if blank, the one in `analysis/$system/INTENT.md`, else recommend one from the assessment).

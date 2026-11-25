@@ -4,6 +4,8 @@ description: "Reads sensor history, inspection measurements, maintenance records
 compatibility: "Requires none. Reads the consolidated dataset, historian and inspection exports from Microsoft 365, the ERP (Oracle NetSuite or Infor M3) for lots and material receipts, and maintenance history via data-consolidate. Runs on exports alone with no connector. Never correlates across sources whose clocks it could not align. Never produces a single unqualified verdict."
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # Root Cause and CAPA
 
 The step between "we found a bad part" and "we fixed the reason." It is slow,

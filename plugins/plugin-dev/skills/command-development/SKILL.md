@@ -4,6 +4,8 @@ description: This skill should be used when the user asks to "create a slash com
 version: 0.2.0
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # Command Development for Claude Code
 
 > **Note:** The `.claude/commands/` directory is a legacy format. For new skills, use the `.claude/skills/<name>/SKILL.md` directory format. Both are loaded identically — the only difference is file layout. See the `skill-development` skill for the preferred format.
@@ -489,7 +491,7 @@ argument-hint: [test-file]
 allowed-tools: Bash(npm:*)
 ---
 
-Run tests: !`npm test $1`
+Run tests: !`bun test $1`
 
 Analyze results and suggest fixes for failures.
 ```

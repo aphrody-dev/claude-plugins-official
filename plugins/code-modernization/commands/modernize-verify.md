@@ -4,6 +4,8 @@ argument-hint: <system> [module]
 arguments: system module
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 Re-check, independently, that the modernized code of `$system` behaves like the legacy, and give each module one
 verdict: **PROVEN**, **PARTLY PROVEN** or **NOT PROVEN**. Run it after `transform`, `uplift` or `reimagine`, in a
 fresh session if you can: what the build left behind is a claim, and this command re-runs it. **A script computes

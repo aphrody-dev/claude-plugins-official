@@ -4,6 +4,8 @@ argument-hint: <system> [module-pattern]
 arguments: system module_pattern
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 Extract the **business rules** embedded in the system into a structured, testable
 specification: the institutional knowledge that is locked in code and in the heads of
 engineers about to retire. If a module pattern was given (`$module_pattern`), focus

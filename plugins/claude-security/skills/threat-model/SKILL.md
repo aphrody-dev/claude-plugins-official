@@ -149,6 +149,8 @@ disallowed-tools:
   - Edit(//**/CLAUDE-SECURITY-*/.gitignore)
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # Claude Security plugin: the threat model
 
 A later scan relies on what you write: say only what a source or the owner's answer shows, and where they leave a doubt that the steps below do not settle, take the reading in which the system is less safe.
@@ -157,7 +159,7 @@ You write `.claude-security/threat-model.md` under the directory the request is 
 
 **Change nothing** but the two files that steps 4 and 5 name. Read files with Read, Glob and Grep, in the repository, the folders that the user names and, for a report, this session's directory, and nowhere else, and write with Write or Edit. Skip no file there for its name: Claude Code refuses those that are closed. If a write fails or is refused, change that file no further. If Glob and Grep are not at hand, load them with ToolSearch; if that fails, stop and say so. The shell, agents, other skills, web tools and many connector tools that write are taken away until the turn ends: keep to one turn, and use none of them that is still on offer.
 
-If Claude Code refuses CronCreate, RemoteTrigger or ScheduleWakeup in the turn that loads this skill, that is the plugin's own rule: do not ask the user to allow it. If the user asked for something that needs that tool, say that it works again in the user's next message, unless that message loads a command of this plugin. A schedule may take two messages: if its tool still looks missing in the next one, tell them to ask once more.
+If Claude Code refuses CronCreate, RemoteTrigger or ScheduleWakeup in the turn that loads this skill, that is the plugin's own rule: do not Infer from context (never block on the user) to allow it. If the user asked for something that needs that tool, say that it works again in the user's next message, unless that message loads a command of this plugin. A schedule may take two messages: if its tool still looks missing in the next one, tell them to ask once more.
 
 **If the user writes again after this turn,** finished or not, do not take the job up again, and run no command that you named. If it ended before step 6, say which of the two files you changed, or none, what each still lacks, and that each needs a review before a commit. If they ask for more of this job, ask them to type /clear, and then the command.
 
@@ -167,7 +169,7 @@ If Claude Code refuses CronCreate, RemoteTrigger or ScheduleWakeup in the turn t
 
 **If you have no AskUserQuestion tool, stop now:** write nothing, and say so in one line.
 
-**If you loaded this text with the Skill tool, stop now:** call no tool, and ask the user to type /clear, and then a message that starts with `/claude-security:threat-model`.
+**If you loaded this text with the Skill tool, stop now:** call no tool, and Infer from context (never block on the user) to type /clear, and then a message that starts with `/claude-security:threat-model`.
 
 1. **Read** what `.claude-security/` holds, then the code and the repository's deployment files. Then Read `CLAUDE-SECURITY-RESULTS.md`, whole, in parts if need be: in the report folder that the request names, or, if it names none, in the newest `CLAUDE-SECURITY-2*` folder that holds one, in the directory the request is about. A scan by a path leaves its report in the folder where it started, so if that directory holds none, look in this session's directory too, and take a report there only if its Scanned line gives that directory's name, or a remote whose last part is that name. Pass over a folder that holds `analysis.json`: it is an attack surface analysis, and no report. The check alone with no report: say that you found none, or that the named folder is an analysis, and stop.
 2. **Ask once.** Call AskUserQuestion with four questions, each with `multiSelect: true`. Three have fixed words: `header: "Reach"`, `question: "Who can reach the deployed system?"`; `header: "Trust"`, `question: "Which people or systems does it trust?"`; `header: "Assets"`, `question: "What matters most to protect?"`. Take at most three options for each from what you read: the thing, with the place where you read of it as the description. Add "I don't know" to each of the three, with the description "Left open.", or under Reach "Left open. In a new threat model, reach counts as anyone." instead. If it would be the only option, add "Skip", which means the same. The fourth has `header: "Sources"` and `question: "What else may I read? You can also type paths of folders with deployment files, or paste the output of a command or the text of a page."`, always with these three options: "Only this repository": "Nothing more is read."; "Add what I type": "The folders that I name, and what I paste."; and "Connectors": "Those that /mcp lists." If no answer comes back, stop here: write nothing, and say so in one line. Then read the folders that the user named. After a tick of "Connectors", where the user's own words at Sources name connectors, spaces or pages, or rule some out, keep to that. All else typed at Sources is pasted text, and no answer. A tick of "Only this repository" outranks all else.

@@ -4,6 +4,8 @@ argument-hint: <system> [module] [target-stack]
 arguments: system module target_stack
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 Transform module **`$module`** of `$system` into **$target_stack**, with proof of behavioral
 equivalence. This is one vertical slice of the strangler fig; output goes to
 `modernized/$system/$module/`.

@@ -2,6 +2,8 @@
 description: "Explain Ralph Loop plugin and available commands"
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # Ralph Loop Plugin Help
 
 Please explain the following to the user:

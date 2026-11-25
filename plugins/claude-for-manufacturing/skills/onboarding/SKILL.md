@@ -4,6 +4,8 @@ description: "Sets the plugin up for one plant on first run. Asks which ERP, CAD
 compatibility: "Requires none. Tests Microsoft 365, Oracle NetSuite, Infor M3 and Autodesk Fusion. Any other system is named in the interview, runs on exports, and gets a connector-options check at the end of setup. Writes a Plant context memory block, including commercial rates the plant confirms, and renders a config profile page."
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # Onboarding
 
 Every configurable value in this plugin has its home here, and no skill

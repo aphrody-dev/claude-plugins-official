@@ -458,7 +458,7 @@ Agents that check a fix may run your tests in the sandbox, where downloads and s
 
 - Install what the tests need in an earlier step, with the condition under [External branches](#external-branches). Change no tracked file there.
 - With the sample's two jobs, only the second runs tests. There, use the condition `(github.event.pull_request.head.repo.full_name == github.repository || !github.event.pull_request) && github.job != 'claude-security'`.
-- If auto mode's classifier denies a test command, add a rule, such as `claude_args: --allowedTools "Bash(npm test:*)"`. Claude Code drops some, such as `Bash(npm run:*)`.
+- If auto mode's classifier denies a test command, add a rule, such as `claude_args: --allowedTools "Bash(bun test:*)"`. Claude Code drops some, such as `Bash(bun run:*)`.
 - Name more job variables for the tests, such as `NODE_ENV`, in `scan_variables`. Name no secret.
 
 ### Code scanning

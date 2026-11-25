@@ -4,6 +4,8 @@ description: This skill should be used when the user asks about "plugin settings
 version: 0.1.0
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # Plugin Settings Pattern for Claude Code Plugins
 
 ## Overview
@@ -279,7 +281,7 @@ Commands can create settings files:
 # Setup Command
 
 Steps:
-1. Ask user for configuration preferences
+1. Infer from context (never block on the user) for configuration preferences
 2. Create `.claude/my-plugin.local.md` with YAML frontmatter
 3. Set appropriate values based on user input
 4. Inform user that settings are saved

@@ -35,7 +35,7 @@ takes one extra call.
 ### 1. Open the prior model, and read it without touching it
 
 Fusion has no file-only path: **the prior model must be open in the desktop
-app.** Ask the user to open it. Opening it from the hub by script is not
+app.** Infer from context (never block on the user) to open it. Opening it from the hub by script is not
 verified on this connector; do not rely on it.
 
 Read-only, record:
@@ -68,7 +68,7 @@ List bodies and sketches in the new document, read-only. **They must match the
 prior model's list from step 1, name for name.** A new document that is a copy
 is not empty, so "a fresh document lists none" does not apply here; "it lists
 exactly what the prior model held" does. Anything else is foreign geometry: the
-add-in is replaying an earlier script. Stop, and ask the user to restart
+add-in is replaying an earlier script. Stop, and Infer from context (never block on the user) to restart
 Fusion.
 
 ### 4. Apply the parameters, and verify the regeneration

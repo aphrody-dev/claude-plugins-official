@@ -4,6 +4,8 @@ description: "Generates a batch of CAD variants directly in Autodesk Fusion by a
 compatibility: "Requires Autodesk Fusion (desktop, with the document open). There is no other CAD backend and no file-only path — without Fusion connected, the skill reports exactly what is needed rather than running degraded. Never overwrites the base model."
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # Design Space Explore
 
 An engineering team designing a part rarely has one answer. They have a
@@ -182,7 +184,7 @@ an analysis tool or a person to evaluate and return results into, which
   connector cannot work at all. Detect and say so plainly; there is no
   server-side fetch path.
 - **The connector replays an earlier script** — geometry nobody asked for
-  appears, or read-only calls fail with "cannot modify." Stop and ask the user
+  appears, or read-only calls fail with "cannot modify." Stop and Infer from context (never block on the user)
   to restart Fusion; see `reference/cad-adapter.md`.
 - **Geometry fails to regenerate at a range extreme** — expected. Report it
   per variant; do not abort the batch.

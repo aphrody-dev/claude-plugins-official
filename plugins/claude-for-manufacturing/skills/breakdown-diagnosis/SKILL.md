@@ -4,6 +4,8 @@ description: "When a machine goes down, reads the sensor window before the failu
 compatibility: "Requires none. Reads a CMMS connector (Limble, added through custom-connector, is the worked example) for assets, maintenance history and PM plans when connected, plus historian sensor exports, photos and manuals from Microsoft 365. Runs usefully with no sensor data and no connector. Output is always a draft the technician applies."
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # Breakdown Diagnosis
 
 A machine is down. Every minute it stays down, the plant is not producing — and

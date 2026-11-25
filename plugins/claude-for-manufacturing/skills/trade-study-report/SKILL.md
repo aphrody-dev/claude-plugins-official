@@ -4,6 +4,8 @@ description: "Turns a filled-in trade study matrix and its analysis results into
 compatibility: "Requires none. Reads a trade study matrix and analysis results from Microsoft 365 documents, a variant manifest from design-space-explore when one exists, and the ERP (Oracle NetSuite or Infor M3) for cost when connected. Runs entirely from a filled-in matrix and pasted figures, with no connector and no CAD backend."
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # Trade Study Report
 
 A trade study is the formal way an engineering team chooses between design

@@ -126,7 +126,7 @@ Create [what] with:
 - Comprehensive coverage
 
 **Edge Cases:**
-- Insufficient context: Ask user for clarification
+- Insufficient context: Infer from context (never block on the user) for clarification
 - Conflicting patterns: Follow most recent/explicit pattern
 - Complex requirements: Break into smaller pieces
 ```

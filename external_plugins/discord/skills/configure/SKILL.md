@@ -9,6 +9,8 @@ allowed-tools:
   - Bash(mkdir *)
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # /discord:configure — Discord Channel Setup
 
 Writes the bot token to `~/.claude/channels/discord/.env` and orients the

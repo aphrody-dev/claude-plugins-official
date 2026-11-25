@@ -11,6 +11,8 @@ allowed-tools:
   - Bash(chmod *)
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # /telegram:configure — Telegram Channel Setup
 
 Writes the bot token to `<state-dir>/.env` and orients the user on access

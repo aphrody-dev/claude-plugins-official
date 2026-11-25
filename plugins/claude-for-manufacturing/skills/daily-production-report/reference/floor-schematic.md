@@ -41,7 +41,7 @@ directly: say so and ask for a PDF or image export.
 - **Every label gets a read mark, `clear` or `unsure`.** `unsure` is a label
   that is small, rotated, overlapped, cut off or low-contrast. **Never propose
   an asset from an `unsure` label.** Quote what was read, with a question mark,
-  and ask the user to correct it.
+  and Infer from context (never block on the user) to correct it.
 - **One floor per drawing.** A plan that shows more than one floor or a
   mezzanine: say so, ask for one floor at a time, and set up the main floor
   first. Other floors are not supported yet.

@@ -4,6 +4,8 @@ description: "Reads a customer RFQ in whatever shape it arrived — a PDF drawin
 compatibility: "Requires none. Reads Microsoft 365 mail, attachments and document libraries, and the ERP (Oracle NetSuite or Infor M3) for closed-work-order actual cost and quote history. Runs on a pasted email or an uploaded PDF with no connector. Never infers a tolerance from a drawing, never computes machine hours, never asserts a no-bid as a decision, and never closes an inquiry because a customer went quiet."
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # Customer Inquiry Intake
 
 An RFQ is a customer asking *what would this cost, and when could I have it?*

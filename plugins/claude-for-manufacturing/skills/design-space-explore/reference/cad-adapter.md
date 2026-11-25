@@ -140,7 +140,7 @@ a wrong answer or a lost call. **Read these before the first call.**
 - **The add-in can retain an earlier script and append it to every later
   call until Fusion restarts.** The symptom is geometry nobody asked for on a
   write, and read-only calls failing with "cannot modify." There is no fix from
-  the script side: **stop, and ask the user to restart Fusion.**
+  the script side: **stop, and Infer from context (never block on the user) to restart Fusion.**
 - **The wrapper crashes when the active product is CAM.** Make every call
   with the Design workspace active and switch to Manufacture inside the
   script. After a crash, workspace sync is lost until a person clicks a

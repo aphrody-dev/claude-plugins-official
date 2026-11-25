@@ -4,6 +4,8 @@ description: "Joins the plant's scheduled exports and connector data into one wo
 compatibility: "Requires none. Reads the ERP (Oracle NetSuite or Infor M3), a CMMS connector (Limble is the worked example) and the Microsoft 365 export folder when connected, and runs on files alone or connectors alone. Emits an XLSX dataset plus an HTML data quality report."
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # Data Consolidate
 
 The foundation layer. The dataset this skill produces is where every

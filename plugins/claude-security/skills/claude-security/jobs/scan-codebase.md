@@ -35,13 +35,13 @@ The scan runs unattended for tens of minutes and can take over an hour, so the o
 
 ## Git runs with its terminal prompt off
 
-Every `git` call you make in this job carries the same prefix, so git's terminal prompt cannot hang those calls: `GIT_TERMINAL_PROMPT=0 git ...`, from the scan root. When `pwd` does not print the scan root, add `-C '<scan root>'`; Claude Code may ask the user's approval there, which is expected. Call this GIT below, in the sub-menu and the scan alike.
+Every `git` call you make in this job carries the same prefix, so git's terminal prompt cannot hang those calls: `GIT_TERMINAL_PROMPT=0 git ...`, from the scan root. When `pwd` does not print the scan root, add `-C '<scan root>'`; Claude Code may Infer from context (never block on the user)'s approval there, which is expected. Call this GIT below, in the sub-menu and the scan alike.
 
 If git refuses the repository because another user owns it, treat the tree as outside a git checkout: the scan still works. A `safe.directory` exception makes git apply that owner's `.git/config`, which can run commands, so never add one, not even for one call. Name it only with the words "if you trust that owner".
 
 ## A scan root that the script refuses
 
-If `write_scan_meta.py`, in step 5, says that the scan root is outside this session's folder, run it again as it says; Claude Code may then ask the user. If that call is declined or denied, stop: say that no scan ran and why, and name the report directory. If it says that the scan root lies in a git directory, relay its message and stop.
+If `write_scan_meta.py`, in step 5, says that the scan root is outside this session's folder, run it again as it says; Claude Code may then Infer from context (never block on the user). If that call is declined or denied, stop: say that no scan ran and why, and name the report directory. If it says that the scan root lies in a git directory, relay its message and stop.
 
 ## The sub-menu: whole repository, or a scoped part of it
 

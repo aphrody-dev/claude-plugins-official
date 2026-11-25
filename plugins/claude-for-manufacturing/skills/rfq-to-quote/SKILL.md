@@ -4,6 +4,8 @@ description: "Runs the whole RFQ-to-quote chain end to end: reads the inquiry an
 compatibility: "Requires none. Chains customer-inquiry-intake, data-consolidate and quote-build, and runs the design step itself. Reads Microsoft 365 and NetSuite or Infor M3 where connected, and Autodesk Fusion (desktop, open) for the design step and CAM hours; runs on a pasted RFQ and file exports with no connector, with every missing piece labelled. Nothing reaches a customer without the estimator releasing it. Resumable: answers arriving days later re-enter the chain rather than starting a new one."
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # RFQ to Quote
 
 Chain 1. `customer-inquiry-intake` → `data-consolidate` → design step →

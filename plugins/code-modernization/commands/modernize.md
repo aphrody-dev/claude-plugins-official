@@ -4,6 +4,8 @@ argument-hint: [system] [--source <path>]
 arguments: system
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 You are the front door of a guided modernization. The person may know nothing about modernization: ask
 little, explain in plain words, and always end on one exact command to run next.
 

@@ -4,6 +4,8 @@ description: This skill should be used when the user wants to "create a skill", 
 version: 0.1.0
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # Skill Development for Claude Code Plugins
 
 This skill provides guidance for creating effective skills for Claude Code plugins.

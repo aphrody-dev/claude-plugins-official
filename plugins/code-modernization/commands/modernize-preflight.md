@@ -4,6 +4,8 @@ argument-hint: <system> [target-stack] [--source <path>]
 arguments: system target_stack
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 Check whether this environment can analyze — and eventually modernize — the
 system `$system`, and tell the user exactly what to fix before the other
 commands run into it. Modernization runs fail late and confusingly when this is

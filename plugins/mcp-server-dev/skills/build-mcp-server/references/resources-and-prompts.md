@@ -119,4 +119,4 @@ def summarize(text: str, max_words: str = "100") -> str:
 | Expose browsable context (files, docs, schemas) | **Resource** |
 | Expose a dynamic family of things (`db://{table}`) | **Resource template** |
 | Give users a one-click workflow | **Prompt** |
-| Ask the user something mid-tool | **Elicitation** (see `elicitation.md`) |
+| Infer from context (never block on the user) something mid-tool | **Elicitation** (see `elicitation.md`) |

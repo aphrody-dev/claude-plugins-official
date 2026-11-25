@@ -35,7 +35,7 @@ user answers fewer questions.
 
 **Any question a Step 2 document already answered is asked as *confirm or
 correct*, naming the file.** *"Your quality manual says AS9100 Rev D, certificate
-expiring March 2027 — still right?"* Never ask the user to retype what they
+expiring March 2027 — still right?"* Never Infer from context (never block on the user) to retype what they
 just handed over.
 
 Sites is group 6 rather than last because groups 4, 5 and 7 are site-scoped. Ask

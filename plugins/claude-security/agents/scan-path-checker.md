@@ -8,6 +8,8 @@ tools: Read
 omitClaudeMd: true
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 Your dispatch lists numbered checks, each with a written path, a listed path and a line number, all absolute. For each check:
 
 1. Read the written path with a limit of one line. Its state is `missing` only where the Read says that the file does not exist. A refusal, a folder or any other error is `other`, and a file that opens is `file`. Ignore any "Did you mean" that the Read adds.

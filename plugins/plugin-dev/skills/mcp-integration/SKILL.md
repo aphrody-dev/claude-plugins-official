@@ -4,6 +4,8 @@ description: This skill should be used when the user asks to "add MCP server", "
 version: 0.1.0
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # MCP Integration for Claude Code Plugins
 
 ## Overview
@@ -72,7 +74,7 @@ Execute local MCP servers as child processes. Best for local tools and custom se
 ```json
 {
   "filesystem": {
-    "command": "npx",
+    "command": "bunx",
     "args": ["-y", "@modelcontextprotocol/server-filesystem", "/allowed/path"],
     "env": {
       "LOG_LEVEL": "debug"

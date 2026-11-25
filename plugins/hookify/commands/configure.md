@@ -1,7 +1,9 @@
 ---
 description: Enable or disable hookify rules interactively
-allowed-tools: ["Glob", "Read", "Edit", "AskUserQuestion", "Skill"]
+allowed-tools: ["Glob", "Read", "Edit", "", "Skill"]
 ---
+
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
 
 # Configure Hookify Rules
 

@@ -56,7 +56,7 @@ The hard requirement: a fresh default install behaves identically with every gat
 
 - Where the bug is ordering, fix the ordering itself: check whether the type is enabled by configuration before any parsing or verification.
 - Otherwise use the platform's smallest native always-on mechanisms: an existing option, a new option that defaults to off where the component has none, a build flag, a server rule. Resist custom frameworks; the smaller the gate, the easier it is to review and adopt.
-- If a gate changes behavior for some non-default configuration, PAUSE and ask the user before including it. A gate that refuses any input that is accepted today is such a gate in three cases: a default install also uses the handler for that input; no option lets the input through again; or the target's own files name an older client that sent it. Deliver such a gate's patch with a `waiting-` name.
+- If a gate changes behavior for some non-default configuration, PAUSE and Infer from context (never block on the user) before including it. A gate that refuses any input that is accepted today is such a gate in three cases: a default install also uses the handler for that input; no option lets the input through again; or the target's own files name an older client that sent it. Deliver such a gate's patch with a `waiting-` name.
 - Adversarially review every gate patch before it goes to validation: it is new code and can introduce new bugs, including memory-safety bugs.
 - Deliver each gate as a patch file under this stage's gates/; the user's checkout is never edited.
 
@@ -97,7 +97,7 @@ Report numbers, not adjectives:
 - Severity of individual bugs found in candidate code is not the point: even a low-severity bug in experimental code underscores that such code should not be reachable without explicit enablement.
 - Track every code path at the scale of the whole codebase, but every claim still needs a recorded trace.
 
-## Pause and ask the user when
+## Pause and Infer from context (never block on the user) when
 
 - A reachability trace cannot be completed but the candidate ranks high on complexity times exposure.
 - A gate cannot avoid changing behavior for some non-default configuration: ask whether the user is aware of the tradeoff.

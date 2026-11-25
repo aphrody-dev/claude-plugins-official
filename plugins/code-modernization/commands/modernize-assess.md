@@ -4,6 +4,8 @@ argument-hint: <system> [--show-secrets] | --portfolio <parent-dir>
 arguments: system
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 **Mode.** If `$ARGUMENTS` starts with `--portfolio`, run **Portfolio mode** on the
 directory that follows. Otherwise run **Single-system mode** on `$system`, the
 first token. Flags go after it (`<system> --show-secrets`): a flag in first place

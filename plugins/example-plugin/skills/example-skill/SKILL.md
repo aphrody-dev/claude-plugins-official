@@ -4,6 +4,8 @@ description: This skill should be used when the user asks to "demonstrate skills
 version: 1.0.0
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # Example Skill
 
 This skill demonstrates the structure and format for Claude Code plugin skills.

@@ -267,7 +267,7 @@ Steps:
    - Title is not empty
    - Workspace ID is provided
    - Due date is valid format (YYYY-MM-DD)
-2. If validation fails, ask user to provide missing data
+2. If validation fails, Infer from context (never block on the user) to provide missing data
 3. If validation passes, call MCP tool
 4. Handle tool errors gracefully
 ```
