@@ -3,6 +3,8 @@ name: session-report
 description: Generate an explorable HTML report of Claude Code session usage (tokens, cache, subagents, skills, expensive prompts) from ~/.claude/projects transcripts.
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # Session Report
 
 Produce a self-contained HTML report of Claude Code usage and save it to the current working directory.

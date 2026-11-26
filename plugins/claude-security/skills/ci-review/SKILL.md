@@ -8,6 +8,8 @@ allowed-tools:
   - Grep
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # GitHub Action scan
 
 This door runs unattended in the GitHub Action's job: it scans a pull request's changes or, on any other event (a schedule, a manual run), the checked-out branch, and leaves the report for the job's later steps. Ask no questions at any point. Invoking this skill is the user's "Yes" to the scan's fixed start confirmation, so the scan recipe's step 3 is already answered; and where a recipe would ask, take its "I don't know" default and say what you chose. The scan's effort tier is the `effort` in the probe's file (step 1). A `change_scan_effort` of `high` there is the user's typed `--change-scan-effort high`.

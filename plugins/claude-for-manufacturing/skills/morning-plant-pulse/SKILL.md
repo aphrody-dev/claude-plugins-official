@@ -4,6 +4,8 @@ description: "Runs the overnight chain that has the morning production report wa
 compatibility: "Requires none. Chains data-consolidate and daily-production-report, then publishes the site's Operations Command Center dashboard to the Claude artifact store where the artifact tools exist, else offers the page in the conversation. Reads M365 exports, NetSuite or Infor M3, and a CMMS connector where connected; runs on the export folder alone. Writes to no system of record, so it is safe to schedule. Asks nothing, is idempotent, reports its own gaps."
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # Morning Plant Pulse
 
 Chain 3. `data-consolidate` → `daily-production-report` → publish.

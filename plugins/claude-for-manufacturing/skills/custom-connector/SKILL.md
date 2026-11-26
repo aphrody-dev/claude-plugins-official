@@ -4,6 +4,8 @@ description: "Gets the plugin talking to a manufacturing system that has no vend
 compatibility: "Requires none of its own. Reads whatever the target system exposes — an existing MCP, a documented API, a database view, a Zapier connector, or a scheduled export — and produces setup instructions, a wrapper, a view definition, a Zap specification, or an export specification depending on which tier the system actually supports. Never accepts a credential in conversation."
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # Custom Connector
 
 SAP and Infor have the largest installed base in manufacturing, and neither

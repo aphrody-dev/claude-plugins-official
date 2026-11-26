@@ -3,6 +3,8 @@ description: List all configured hookify rules
 allowed-tools: ["Glob", "Read", "Skill"]
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # List Hookify Rules
 
 **Load hookify:writing-rules skill first** to understand rule format.

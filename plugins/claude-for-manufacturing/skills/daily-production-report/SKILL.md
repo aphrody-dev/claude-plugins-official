@@ -4,6 +4,8 @@ description: "Produces the morning production report: output against plan by lin
 compatibility: "Requires a consolidated dataset from data-consolidate. Reads the ERP (Oracle NetSuite or Infor M3) for standard cost and open work orders, and a CMMS connector (Limble is the worked example) for maintenance work orders in progress, when connected. Runs on export-only data. Writes nothing to any system of record."
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # Daily Production Report
 
 Every plant runs a morning production meeting, and somebody spends 60 to 90

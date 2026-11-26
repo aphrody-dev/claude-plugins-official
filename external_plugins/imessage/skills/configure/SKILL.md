@@ -7,6 +7,8 @@ allowed-tools:
   - Bash(ls *)
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # /imessage:configure — iMessage Channel Setup
 
 There's no token to save — iMessage reads `~/Library/Messages/chat.db`

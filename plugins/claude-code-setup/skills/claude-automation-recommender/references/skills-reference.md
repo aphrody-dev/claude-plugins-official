@@ -185,7 +185,7 @@ Create a migration for: $ARGUMENTS
 ```bash
 #!/bin/bash
 # Validate migration syntax
-npx prisma validate 2>&1 || echo "Validation failed"
+bunx prisma validate 2>&1 || echo "Validation failed"
 ```
 
 ---
@@ -377,10 +377,10 @@ disable-model-invocation: true
 Set up development environment:
 
 1. Check prerequisites: `bash scripts/check-prerequisites.sh`
-2. Install dependencies: `npm install`
+2. Install dependencies: `bun install`
 3. Copy environment template: `cp .env.example .env`
-4. Set up database: `npm run db:setup`
-5. Verify setup: `npm test`
+4. Set up database: `bun run db:setup`
+5. Verify setup: `bun test`
 
 Report any issues encountered.
 ```

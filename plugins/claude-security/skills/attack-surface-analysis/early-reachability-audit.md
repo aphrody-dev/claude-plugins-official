@@ -63,7 +63,7 @@ Record per item the sensitivity properties and the complexity numbers defined ab
 
 ### 6. Classify intent and rank the inventory
 
-- Classify every item: **intended-early** when its function requires running before the boundary — identity cannot be checked without parsing the credential, a session cannot be negotiated without parsing the hello; **unintended-early** when nothing about its function requires early execution and the reachability follows from dispatch structure, a missing or late guard, or an ordering accident. Early reachability is often deliberate and necessary; separate the cases with recorded evidence, never by assumption. For a library or framework, the documented default posture is developer intent: code early because the embedding application configures no boundary is intended-early, noted as such. Where the evidence is genuinely ambiguous, classify as unknown and ask the user.
+- Classify every item: **intended-early** when its function requires running before the boundary — identity cannot be checked without parsing the credential, a session cannot be negotiated without parsing the hello; **unintended-early** when nothing about its function requires early execution and the reachability follows from dispatch structure, a missing or late guard, or an ordering accident. Early reachability is often deliberate and necessary; separate the cases with recorded evidence, never by assumption. For a library or framework, the documented default posture is developer intent: code early because the embedding application configures no boundary is intended-early, noted as such. Where the evidence is genuinely ambiguous, classify as unknown and Infer from context (never block on the user).
 - Rank by exposure first — early against more boundaries ranks higher, pre-authentication 0-click paths at the top — then, within a tier, by sensitivity-property count, then by the complexity measures.
 - Intended-early items head the audit-attention list: they cannot be moved, so they earn scrutiny in proportion to their exposure. Unintended-early items, every state-ordering gap from step 4, and boundary bookkeeping defects are findings; for each, name the smallest change that would fix it (add the state guard, check state before parsing, gate the dispatch, record the crossing). Naming the direction is in scope; designing and applying the change is not.
 
@@ -86,7 +86,7 @@ Every finding — unintended-early items, state-ordering gaps, and boundary book
 - An inventory item is an audit priority, not a vulnerability; no exploitability is claimed, and severity of individual bugs found along the way is not the point.
 - Compare every message type against every state across every configuration, but every claim still needs a recorded trace.
 
-## Pause and ask the user when
+## Pause and Infer from context (never block on the user) when
 
 - A trace cannot be completed but the item would rank high on exposure and complexity.
 - The implemented ordering diverges from the written definition in a way that looks deliberate — compatibility with non-conforming peers is common — and the intent classification hinges on evidence the code does not show.

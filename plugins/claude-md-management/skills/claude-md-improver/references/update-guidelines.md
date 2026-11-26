@@ -11,8 +11,8 @@ Only add information that will genuinely help future Claude sessions. The contex
 ```markdown
 ## Build
 
-`npm run build:prod` - Full production build with optimization
-`npm run build:dev` - Fast dev build (no minification)
+`bun run build:prod` - Full production build with optimization
+`bun run build:dev` - Fast dev build (no minification)
 ```
 
 Why: Saves future sessions from discovering these again.
@@ -127,9 +127,9 @@ Section: Commands (new section after ## Architecture)
 +
 +| Command | Purpose |
 +|---------|---------|
-+| `npm run dev` | Dev server with HMR |
-+| `npm run build` | Production build |
-+| `npm test` | Run test suite |
++| `bun run dev` | Dev server with HMR |
++| `bun run build` | Production build |
++| `bun test` | Run test suite |
 ```
 
 ### 3. Explain Why

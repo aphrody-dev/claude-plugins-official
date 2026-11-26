@@ -3,6 +3,8 @@ description: Create and setup a new Claude Agent SDK application
 argument-hint: [project-name]
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 You are tasked with helping the user create a new Claude Agent SDK application. Follow these steps carefully:
 
 ## Reference Documentation
@@ -65,7 +67,7 @@ Based on the user's answers, create a plan that includes:
 
    - Create project directory (if it doesn't exist)
    - Initialize package manager:
-     - TypeScript: `npm init -y` and setup `package.json` with type: "module" and scripts (include a "typecheck" script)
+     - TypeScript: `bun init -y` and setup `package.json` with type: "module" and scripts (include a "typecheck" script)
      - Python: Create `requirements.txt` or use `poetry init`
    - Add necessary configuration files:
      - TypeScript: Create `tsconfig.json` with proper settings for the SDK
@@ -80,7 +82,7 @@ Based on the user's answers, create a plan that includes:
 
 3. **SDK Installation**:
 
-   - TypeScript: `npm install @anthropic-ai/claude-agent-sdk@latest` (or specify latest version)
+   - TypeScript: `bun install @anthropic-ai/claude-agent-sdk@latest` (or specify latest version)
    - Python: `pip install claude-agent-sdk` (pip installs latest by default)
    - After installation, verify the installed version:
      - TypeScript: Check package.json or run `npm list @anthropic-ai/claude-agent-sdk`
@@ -116,7 +118,7 @@ After gathering requirements and getting user confirmation on the plan:
 7. Add helpful comments in the code explaining what each part does
 8. **VERIFY THE CODE WORKS BEFORE FINISHING**:
    - For TypeScript:
-     - Run `npx tsc --noEmit` to check for type errors
+     - Run `bunx tsc --noEmit` to check for type errors
      - Fix ALL type errors until types pass completely
      - Ensure imports and types are correct
      - Only proceed when type checking passes with no errors
@@ -142,7 +144,7 @@ Once setup is complete and verified, provide the user with:
 
    - How to set their API key
    - How to run their agent:
-     - TypeScript: `npm start` or `node --loader ts-node/esm index.ts`
+     - TypeScript: `npm start` or `node --loader bun/esm index.ts`
      - Python: `python main.py`
 
 2. **Useful resources**:
@@ -161,7 +163,7 @@ Once setup is complete and verified, provide the user with:
 
 - **ALWAYS USE LATEST VERSIONS**: Before installing any packages, check for the latest versions using WebSearch or by checking npm/PyPI directly
 - **VERIFY CODE RUNS CORRECTLY**:
-  - For TypeScript: Run `npx tsc --noEmit` and fix ALL type errors before finishing
+  - For TypeScript: Run `bunx tsc --noEmit` and fix ALL type errors before finishing
   - For Python: Verify syntax and imports are correct
   - Do NOT consider the task complete until the code passes verification
 - Verify the installed version after installation and inform the user

@@ -3,6 +3,8 @@ description: Set up the Asana V2 MCP server connection (one-time OAuth app + cla
 argument-hint: "[client_id]"
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 The user wants to connect Claude Code to Asana's V2 MCP server. Guide them through the one-time setup below. Do NOT run `claude mcp add` yourself — the `--client-secret` prompt needs a real terminal (a hidden TTY prompt), so the user must run it in their own terminal.
 
 Their Asana OAuth Client ID (if provided): `$1`

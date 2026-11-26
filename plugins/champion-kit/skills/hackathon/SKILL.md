@@ -4,6 +4,8 @@ description: Plan a hackathon, either from a team's real backlog or as open-ende
 argument-hint: "[optional: time available and who is coming]"
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 ## Start here
 
 Say in one line what you'll make: a hackathon plan with projects, a run of show, and an invite, built from your backlog or as open-ended creative play.

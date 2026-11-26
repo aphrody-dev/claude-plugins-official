@@ -4,6 +4,8 @@ description: This skill should be used when the user wants to "package an MCP se
 version: 0.1.0
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # Build an MCPB (Bundled Local MCP Server)
 
 MCPB is a local MCP server **packaged with its runtime**. The user installs one file; it runs without needing Node, Python, or any toolchain on their machine. It's the sanctioned way to distribute local MCP servers.
@@ -133,10 +135,10 @@ Before hardcoding `ROOT` from a config env var, check if the host supports `root
 ### Node
 
 ```bash
-npm install
-npx esbuild src/index.ts --bundle --platform=node --outfile=server/index.js
+bun install
+bunx esbuild src/index.ts --bundle --platform=node --outfile=server/index.js
 # or: copy node_modules wholesale if native deps resist bundling
-npx @anthropic-ai/mcpb pack
+bunx @anthropic-ai/mcpb pack
 ```
 
 `mcpb pack` zips the directory and validates `manifest.json` against the schema.
@@ -145,7 +147,7 @@ npx @anthropic-ai/mcpb pack
 
 ```bash
 pip install -t server/vendor -r requirements.txt
-npx @anthropic-ai/mcpb pack
+bunx @anthropic-ai/mcpb pack
 ```
 
 Vendor dependencies into a subdirectory and prepend it to `sys.path` in your entry script. Native extensions (numpy, etc.) must be built for each target platform — avoid native deps if you can.
@@ -174,17 +176,17 @@ Widget authoring is covered in the **`build-mcp-app`** skill; it works the same 
 
 ```bash
 # Interactive manifest creation (first time)
-npx @anthropic-ai/mcpb init
+bunx @anthropic-ai/mcpb init
 
 # Run the server directly over stdio, poke it with the inspector
-npx @modelcontextprotocol/inspector node server/index.js
+bunx @modelcontextprotocol/inspector bun server/index.js
 
 # Validate manifest against schema, then pack
-npx @anthropic-ai/mcpb validate
-npx @anthropic-ai/mcpb pack
+bunx @anthropic-ai/mcpb validate
+bunx @anthropic-ai/mcpb pack
 
 # Sign for distribution
-npx @anthropic-ai/mcpb sign dist/local-files.mcpb
+bunx @anthropic-ai/mcpb sign dist/local-files.mcpb
 
 # Install: drag the .mcpb file onto Claude Desktop
 ```

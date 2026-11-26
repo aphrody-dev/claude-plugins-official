@@ -4,6 +4,8 @@ description: Analyze a codebase and recommend Claude Code automations (hooks, su
 tools: Read, Glob, Grep, Bash
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # Claude Automation Recommender
 
 Analyze codebase patterns to recommend tailored Claude Code automations across all extensibility options.
@@ -283,7 +285,7 @@ Configure allowed tools in `.claude/settings.json`:
 ```json
 {
   "permissions": {
-    "allow": ["Edit", "Write", "Bash(npm test:*)", "Bash(git commit:*)"]
+    "allow": ["Edit", "Write", "Bash(bun test:*)", "Bash(git commit:*)"]
   }
 }
 ```

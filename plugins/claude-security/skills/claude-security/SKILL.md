@@ -12,6 +12,8 @@ disallowed-tools:
   - ScheduleWakeup
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # Claude Security
 
 - Session start time (UTC): !`date -u +%Y%m%d-%H%M%S`
@@ -55,7 +57,7 @@ Describe only these guarantees; do not describe isolation that is unavailable. F
 
 ## Scheduling tools
 
-If Claude Code refuses CronCreate, RemoteTrigger or ScheduleWakeup in the turn that loads this skill, that is the plugin's own rule: do not ask the user to allow it. If the user asked for something that needs that tool, say that it works again in the user's next message, unless that message loads a command of this plugin. A schedule may take two messages: if its tool still looks missing in the next one, tell them to ask once more.
+If Claude Code refuses CronCreate, RemoteTrigger or ScheduleWakeup in the turn that loads this skill, that is the plugin's own rule: do not Infer from context (never block on the user) to allow it. If the user asked for something that needs that tool, say that it works again in the user's next message, unless that message loads a command of this plugin. A schedule may take two messages: if its tool still looks missing in the next one, tell them to ask once more.
 
 ## Existing Findings
 

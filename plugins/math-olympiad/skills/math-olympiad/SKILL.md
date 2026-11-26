@@ -14,6 +14,8 @@ description:
 version: 0.1.0
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # Math Olympiad Solver
 
 ## The five things that change outcomes

@@ -4,6 +4,8 @@ description: "Writes the nonconformance report: what was found and measured, the
 compatibility: "Requires none. Reads the consolidated dataset for work orders, lots and on-hand inventory by location; the ERP (Oracle NetSuite or Infor M3) for shipments, which the workbook never carries; and Microsoft 365 for drawings, specs and the quality document library. Runs on pasted findings, inspection exports and uploaded drawings with no connector. The NCR uses the plant's or the customer's controlled template, never the house style."
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # NCR Writeup
 
 The formal record that something did not meet its requirement, written by

@@ -3,6 +3,8 @@ description: Get help with the hookify plugin
 allowed-tools: ["Read"]
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # Hookify Plugin Help
 
 Explain how the hookify plugin works and how to use it.
@@ -109,7 +111,7 @@ event: stop
 pattern: .*
 ---
 
-Did you run tests before finishing? Make sure `npm test` or equivalent was executed.
+Did you run tests before finishing? Make sure `bun test` or equivalent was executed.
 ```
 
 ## Pattern Syntax

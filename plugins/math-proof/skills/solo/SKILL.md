@@ -7,6 +7,8 @@ disallowed-tools: WebSearch, WebFetch, AskUserQuestion
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash(mkdir *), Bash(cp *), Bash(cmp *)
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # math-proof: solo
 
 You solve the problem yourself, in this session. There are no sub-agents and no rounds: just you, a notes

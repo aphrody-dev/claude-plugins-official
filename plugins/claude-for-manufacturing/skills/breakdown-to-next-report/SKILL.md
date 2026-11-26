@@ -4,6 +4,8 @@ description: "Runs the chain from a machine going down to the diagnosis landing 
 compatibility: "Requires none. Chains breakdown-diagnosis and daily-production-report. Reads a CMMS connector (Limble is the worked example) for assets, history and PM plans when connected, plus a historian export and uploaded photos. Runs with no sensor data and no connector at all. Safety implications surface before any diagnosis. The diagnosis is advisory throughout and is never written back to a ticket."
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # Breakdown to Next Report
 
 Chain 4. `breakdown-diagnosis` → `daily-production-report`.

@@ -4,6 +4,8 @@ description: This skill should be used when the user wants to build an "MCP app"
 version: 0.1.0
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # Build an MCP App (Interactive UI Widgets)
 
 An MCP app is a standard MCP server that **also serves UI resources** — interactive components rendered inline in the chat surface. Build once, runs in Claude *and* ChatGPT and any other host that implements the apps surface.
@@ -200,7 +202,7 @@ Keep widgets **small and single-purpose**. A picker picks. A chart displays. Don
 **Install:**
 
 ```bash
-npm install @modelcontextprotocol/sdk @modelcontextprotocol/ext-apps zod express
+bun install @modelcontextprotocol/sdk @modelcontextprotocol/ext-apps zod express
 ```
 
 **Server (`src/server.ts`):**
@@ -334,7 +336,7 @@ See `references/widget-templates.md` for more widget shapes.
 {
   "mcpServers": {
     "my-server": {
-      "command": "npx",
+      "command": "bunx",
       "args": ["-y", "mcp-remote", "http://localhost:3000/mcp",
                "--allow-http", "--transport", "http-only"]
     }
@@ -353,7 +355,7 @@ Desktop caches UI resources aggressively. After editing widget HTML, **fully qui
 {"jsonrpc":"2.0","id":2,"method":"tools/list"}
 {"jsonrpc":"2.0","id":3,"method":"tools/call","params":{"name":"your_tool","arguments":{...}}}
 
-(cat test.jsonl; sleep 10) | npx mcp-remote http://localhost:3000/mcp --allow-http
+(cat test.jsonl; sleep 10) | bunx mcp-remote http://localhost:3000/mcp --allow-http
 ```
 
 The `sleep` keeps stdin open long enough to collect all responses. Parse the jsonl output with `jq` or a Python one-liner.

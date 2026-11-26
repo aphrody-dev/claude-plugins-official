@@ -113,7 +113,7 @@ description be surprised by what you found?
   external network calls (MCP remote URLs in `.mcp.json`, hooks with fetch/curl,
   skills instructing HTTP requests).
 - `may_download_additional_software`: true if the plugin may install packages
-  (npm/pip/apt/brew/cargo/uvx/npx --yes) via hooks, skills, or instructions.
+  (npm/pip/apt/brew/cargo/uvx/bunx --yes) via hooks, skills, or instructions.
 
 ## Verdict
 

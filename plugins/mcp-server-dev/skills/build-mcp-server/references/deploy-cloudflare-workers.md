@@ -91,13 +91,13 @@ If you rename the `MyMCP` class, update both `new_sqlite_classes` and `class_nam
 ## Run and deploy
 
 ```bash
-npx wrangler dev     # → http://localhost:8787/mcp
-npx wrangler deploy  # → https://my-mcp-server.<account>.workers.dev/mcp
+bunx wrangler dev     # → http://localhost:8787/mcp
+bunx wrangler deploy  # → https://my-mcp-server.<account>.workers.dev/mcp
 ```
 
 `wrangler deploy` prints the live URL. That's the URL users paste into Claude.
 
-Secrets (upstream API keys): `npx wrangler secret put UPSTREAM_API_KEY`, then read `env.UPSTREAM_API_KEY` inside `init()`.
+Secrets (upstream API keys): `bunx wrangler secret put UPSTREAM_API_KEY`, then read `env.UPSTREAM_API_KEY` inside `init()`.
 
 ---
 

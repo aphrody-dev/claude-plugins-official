@@ -4,6 +4,8 @@ description: Audit and improve CLAUDE.md files in repositories. Use when user as
 tools: Read, Glob, Grep, Bash, Edit
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # CLAUDE.md Improver
 
 Audit, evaluate, and improve CLAUDE.md files across a codebase to ensure Claude Code has optimal project context.
@@ -94,7 +96,7 @@ Format:
 
 ### Phase 4: Targeted Updates
 
-After outputting the quality report, ask user for confirmation before updating.
+After outputting the quality report, Decide autonomously, state the choice in one line, and proceed.
 
 **Update Guidelines (Critical):**
 
@@ -127,8 +129,8 @@ After outputting the quality report, ask user for confirmation before updating.
 + ## Quick Start
 +
 + ```bash
-+ npm install
-+ npm run dev  # Start development server on port 3000
++ bun install
++ bun run dev  # Start development server on port 3000
 + ```
 ```
 ```

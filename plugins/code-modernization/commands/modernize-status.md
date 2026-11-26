@@ -4,6 +4,8 @@ argument-hint: <system>
 arguments: system
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 Report where the modernization of `$system` stands, in one screen. This command inspects and never modifies,
 except that it refreshes `analysis/$system/REPORT.html` (`python3
 "${CLAUDE_PLUGIN_ROOT}/scripts/build_report.py" $system`, a convenience: if it fails or `python3` is missing, say so in one line and carry on). If nothing

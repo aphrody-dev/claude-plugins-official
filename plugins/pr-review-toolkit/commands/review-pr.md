@@ -4,6 +4,8 @@ argument-hint: "[review-aspects]"
 allowed-tools: ["Bash", "Glob", "Grep", "Read", "Task"]
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # Comprehensive PR Review
 
 Run a comprehensive pull request review using multiple specialized agents, each focusing on a different aspect of code quality.

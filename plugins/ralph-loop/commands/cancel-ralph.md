@@ -4,6 +4,8 @@ allowed-tools: ["Bash(test -f .claude/ralph-loop.local.md:*)", "Bash(rm .claude/
 hide-from-slash-command-tool: "true"
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # Cancel Ralph
 
 To cancel the Ralph loop:

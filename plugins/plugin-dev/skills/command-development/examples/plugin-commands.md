@@ -514,7 +514,7 @@ Use for: Verifying required plugin files exist
 1. **Using relative paths instead of ${CLAUDE_PLUGIN_ROOT}:**
    ```markdown
    # Wrong
-   !`node ./scripts/analyze.js`
+   !`bun ./scripts/analyze.js`
 
    # Correct
    !`node ${CLAUDE_PLUGIN_ROOT}/scripts/analyze.js`

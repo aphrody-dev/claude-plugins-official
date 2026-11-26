@@ -112,7 +112,7 @@ allowed-tools: Read, Bash(npm:*)
 
 Reading deployment state from `.claude/deployment-state.local.md`...
 
-Running tests: !`npm test`
+Running tests: !`bun test`
 
 Updating state to 'tested'...
 
@@ -151,7 +151,7 @@ Status: !`git status --short`
    - If hotfix: Fast-track process
 
 2. Tests:
-   !`npm test`
+   !`bun test`
    - If tests fail: STOP - fix tests first
    - If tests pass: Continue
 
@@ -528,7 +528,7 @@ description: Resilient deployment workflow
 Running steps with error handling...
 
 ## Step 1: Tests
-!`npm test`
+!`bun test`
 
 if [ $? -ne 0 ]; then
   ERROR: Tests failed
@@ -540,7 +540,7 @@ if [ $? -ne 0 ]; then
 
   What would you like to do?
 
-  [Wait for user input before continuing]
+  [Proceed without waiting; record assumptions
 fi
 
 ## Step 2: Build

@@ -3,6 +3,8 @@ allowed-tools: Bash(git checkout --branch:*), Bash(git add:*), Bash(git status:*
 description: Commit, push, and open a PR
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 ## Context
 
 - Current git status: !`git status`

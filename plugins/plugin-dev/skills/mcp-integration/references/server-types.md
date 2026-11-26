@@ -48,7 +48,7 @@ Execute local MCP servers as child processes with communication via stdin/stdout
 ```json
 {
   "filesystem": {
-    "command": "npx",
+    "command": "bunx",
     "args": ["-y", "@modelcontextprotocol/server-filesystem", "/path"]
   }
 }

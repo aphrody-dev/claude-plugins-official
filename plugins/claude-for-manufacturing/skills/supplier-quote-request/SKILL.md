@@ -4,6 +4,8 @@ description: "Builds the RFQ package that goes out to suppliers — drawing and 
 compatibility: "Requires none. Reads the ERP (Oracle NetSuite or Infor M3) for the item master, usage history, vendor records and purchase-order history, and Microsoft 365 for drawings, specifications, templates and supplier replies. Runs on an uploaded drawing, pasted quantities and pasted bids with no connector. Nothing goes to a supplier, and nothing is awarded or ordered, except by the buyer."
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # Supplier Quote Request
 
 The RFQ pointed the other way: instead of a customer asking us to quote, we are

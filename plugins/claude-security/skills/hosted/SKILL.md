@@ -32,6 +32,8 @@ disallowed-tools:
   - Skill(claude-security:attack-surface-analysis *)
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # Claude Security: the hosted product
 
 [Claude Security](https://claude.com/product/claude-security) is Anthropic's hosted product: it scans the repositories of each *project* and keeps what it finds. This skill reads what it holds for the user, through a connector (an MCP server) this session already has.

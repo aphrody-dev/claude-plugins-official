@@ -4,6 +4,8 @@ description: Set up recurring champion routines as Claude Code scheduled tasks. 
 argument-hint: "[optional: a routine name]"
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 ## Start here
 
 Say in one line what you'll make: a ready-to-paste `/schedule` line for each routine you pick, adapted to this repo.

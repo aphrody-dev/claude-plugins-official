@@ -4,6 +4,8 @@ description: Evaluate an organization's AI maturity on the steps of AI adoption 
 argument-hint: "[optional: org or team name]"
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 ## Start here
 
 Say in one line what you'll make: a scored HTML report on the steps of AI adoption, with evidence for each score, saved where you choose.

@@ -4,6 +4,8 @@ description: Code review a pull request
 disable-model-invocation: false
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 Provide a code review for the given pull request.
 
 **Agent assumptions (applies to all agents and subagents):**

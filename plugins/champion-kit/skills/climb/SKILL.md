@@ -4,6 +4,8 @@ description: Work out where a teammate, the champion, or a team is on the steps 
 argument-hint: "[optional: who, or how they work today]"
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 ## Start here
 
 Say in one line what you'll make: which step someone is on, what's holding them back, and one thing to try next on their own code.

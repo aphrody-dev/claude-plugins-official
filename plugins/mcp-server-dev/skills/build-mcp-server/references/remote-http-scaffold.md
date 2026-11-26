@@ -7,9 +7,9 @@ Minimal working servers in both recommended frameworks. Start here, then add too
 ## TypeScript SDK (`@modelcontextprotocol/sdk`)
 
 ```bash
-npm init -y
-npm install @modelcontextprotocol/sdk zod express
-npm install -D typescript @types/express @types/node tsx
+bun init -y
+bun install @modelcontextprotocol/sdk zod express
+bun install -D typescript @types/express @types/node tsx
 ```
 
 **`src/server.ts`**
@@ -161,17 +161,17 @@ The MCP Inspector connects to any transport and lets you poke tools interactivel
 
 ```bash
 # Interactive — opens a UI on localhost:6274
-npx @modelcontextprotocol/inspector
+bunx @modelcontextprotocol/inspector
 # → select "Streamable HTTP", paste http://localhost:3000/mcp, Connect
 ```
 
 For scripted checks (CI, smoke tests):
 
 ```bash
-npx @modelcontextprotocol/inspector --cli http://localhost:3000/mcp \
+bunx @modelcontextprotocol/inspector --cli http://localhost:3000/mcp \
   --transport http --method tools/list
 
-npx @modelcontextprotocol/inspector --cli http://localhost:3000/mcp \
+bunx @modelcontextprotocol/inspector --cli http://localhost:3000/mcp \
   --transport http --method tools/call --tool-name search_items --tool-arg query=test
 ```
 
@@ -193,7 +193,7 @@ Once deployed, users add the URL directly — no install step.
 
 **Fastest path:** Cloudflare Workers — two commands from zero to a live `https://` URL on the free tier. Uses a Workers-native scaffold (not Express). → `deploy-cloudflare-workers.md`
 
-**This Express scaffold** runs on any Node host — Render, Railway, Fly.io, a VPS. Containerize it (`node:20-slim`, copy, `npm ci`, `node dist/server.js`) and ship. FastMCP is the same story with a Python base image.
+**This Express scaffold** runs on any Node host — Render, Railway, Fly.io, a VPS. Containerize it (`node:20-slim`, copy, `bun install --frozen-lockfile`, `bun dist/server.js`) and ship. FastMCP is the same story with a Python base image.
 
 ---
 

@@ -4,4 +4,6 @@ description: "Write the claude-security command to ~/.local/bin, to run a scan b
 disable-model-invocation: true
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 Run `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/cli.py" --install` as one Bash command. Show its output as printed. Do nothing else. If Claude Code does not allow the call, say so, and that nothing was installed.

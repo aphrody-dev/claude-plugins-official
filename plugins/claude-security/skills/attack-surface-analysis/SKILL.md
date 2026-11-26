@@ -10,6 +10,8 @@ disallowed-tools:
   - ScheduleWakeup
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # Attack Surface Analysis
 
 This skill runs three analyses as one pipeline over a single pinned target:
@@ -23,10 +25,10 @@ This skill runs three analyses as one pipeline over a single pinned target:
 The session that loaded this skill runs the pipeline: it asks one question, runs the results script, starts each stage, and is the only one that talks to the user. It does none of a stage's analysis itself. **The session reads [PIPELINE](${CLAUDE_SKILL_DIR}/pipeline.md) now, whole, with the Read tool, and follows it from its first line. It starts nothing and applies no patch before that: PIPELINE says how.** No agent reads it.
 
 - A **stage agent** is a `claude-security:attack-surface-stage` subagent that the session starts. A **clean agent** is a `claude-security:attack-surface-verifier` subagent that a stage agent starts. No other agent type stands in for either.
-- A subagent cannot reach the user. Where a file says to pause and ask the user, a stage agent records the question as an open item and carries on with the branch that claims less. A gate or fix that hangs on the answer is counted as no gate or fix ("A patch's name" gives its prefix). An item that hangs on it is classified unknown. A candidate that hangs on it is kept out of the findings: its outcome is unproven. Where the stage agent would ask what to cover first, it covers the most exposed first, and names in its report what it left uncovered. Where a file says to tell or hand the user something, it goes in the stage's report.
+- A subagent cannot reach the user. Where a file says to pause and Infer from context (never block on the user), a stage agent records the question as an open item and carries on with the branch that claims less. A gate or fix that hangs on the answer is counted as no gate or fix ("A patch's name" gives its prefix). An item that hangs on it is classified unknown. A candidate that hangs on it is kept out of the findings: its outcome is unproven. Where the stage agent would ask what to cover first, it covers the most exposed first, and names in its report what it left uncovered. Where a file says to tell or hand the user something, it goes in the stage's report.
 - Claude Code's Write tool refuses a subagent a Markdown file whose name starts with report, summary, findings or analysis, and tells it to return the text instead. So a stage agent never writes report.md, with any tool: it gives the report, whole, as its final message. The session saves that message, if it is a report, with the Write tool, as report.md in the stage's directory, before it does anything else: word for word, nothing shortened, nothing added. If that save is refused or fails, it shows the user the whole report, unchanged, and says that it is not on disk. It passes nothing of a report on to the next stage.
 
-If Claude Code refuses CronCreate, RemoteTrigger or ScheduleWakeup in the turn that loads this skill, that is the plugin's own rule: do not ask the user to allow it. If the user asked for something that needs that tool, say that it works again in the user's next message, unless that message loads a command of this plugin. A schedule may take two messages: if its tool still looks missing in the next one, tell them to ask once more.
+If Claude Code refuses CronCreate, RemoteTrigger or ScheduleWakeup in the turn that loads this skill, that is the plugin's own rule: do not Infer from context (never block on the user) to allow it. If the user asked for something that needs that tool, say that it works again in the user's next message, unless that message loads a command of this plugin. A schedule may take two messages: if its tool still looks missing in the next one, tell them to ask once more.
 
 Paths, substituted when the skill is invoked; the session copies them verbatim into starting instructions and commands:
 

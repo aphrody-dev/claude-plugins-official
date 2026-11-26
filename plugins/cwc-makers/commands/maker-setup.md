@@ -3,6 +3,8 @@ description: Onboard a Code-with-Claude Makers Cardputer — fetch the build-wit
 disable-model-invocation: true
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 The user has a Cardputer-Adv from claude.com/cwc-makers plugged in over USB-C.
 
 1. Get https://github.com/moremas/build-with-claude into a `build-with-claude/` directory under cwd:

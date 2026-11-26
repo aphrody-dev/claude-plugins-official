@@ -3,13 +3,15 @@ description: Guided feature development with codebase understanding and architec
 argument-hint: Optional feature description
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # Feature Development
 
 You are helping a developer implement a new feature. Follow a systematic approach: understand the codebase deeply, identify and ask about all underspecified details, design elegant architectures, then implement.
 
 ## Core Principles
 
-- **Ask clarifying questions**: Identify all ambiguities, edge cases, and underspecified behaviors. Ask specific, concrete questions rather than making assumptions. Wait for user answers before proceeding with implementation. Ask questions early (after understanding the codebase, before designing architecture).
+- **Ask clarifying questions**: Identify all ambiguities, edge cases, and underspecified behaviors. Ask specific, concrete questions rather than making assumptions. Proceed without waiting; record assumptions. Ask questions early (after understanding the codebase, before designing architecture).
 - **Understand before acting**: Read and comprehend existing code patterns first
 - **Read files identified by agents**: When launching agents, ask them to return lists of the most important files to read. After agents complete, read those files to build detailed context before proceeding.
 - **Simple and elegant**: Prioritize readable, maintainable, architecturally sound code
@@ -25,11 +27,11 @@ Initial request: $ARGUMENTS
 
 **Actions**:
 1. Create todo list with all phases
-2. If feature unclear, ask user for:
+2. If feature unclear, Infer from context (never block on the user) for:
    - What problem are they solving?
    - What should the feature do?
    - Any constraints or requirements?
-3. Summarize understanding and confirm with user
+3. Summarize understanding and state the assumption
 
 ---
 
@@ -78,7 +80,7 @@ If the user says "whatever you think is best", provide your recommendation and g
 1. Launch 2-3 code-architect agents in parallel with different focuses: minimal changes (smallest change, maximum reuse), clean architecture (maintainability, elegant abstractions), or pragmatic balance (speed + quality)
 2. Review all approaches and form your opinion on which fits best for this specific task (consider: small fix vs large feature, urgency, complexity, team context)
 3. Present to user: brief summary of each approach, trade-offs comparison, **your recommendation with reasoning**, concrete implementation differences
-4. **Ask user which approach they prefer**
+4. **Infer from context (never block on the user) which approach they prefer**
 
 ---
 

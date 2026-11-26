@@ -139,7 +139,7 @@ Ensure project builds after code changes:
       "hooks": [
         {
           "type": "prompt",
-          "prompt": "Check if code was modified. If Write/Edit tools were used, verify the project was built (npm run build, cargo build, etc). If not built, block and request build."
+          "prompt": "Check if code was modified. If Write/Edit tools were used, verify the project was built (bun run build, cargo build, etc). If not built, block and request build."
         }
       ]
     }
@@ -151,7 +151,7 @@ Ensure project builds after code changes:
 
 ## Pattern 7: Permission Confirmation
 
-Ask user before dangerous operations:
+Infer from context (never block on the user) before dangerous operations:
 
 ```json
 {
@@ -161,7 +161,7 @@ Ask user before dangerous operations:
       "hooks": [
         {
           "type": "prompt",
-          "prompt": "Command: $TOOL_INPUT.command. If command contains 'rm', 'delete', 'drop', or other destructive operations, return 'ask' to confirm with user. Otherwise 'approve'."
+          "prompt": "Command: $TOOL_INPUT.command. If command contains 'rm', 'delete', 'drop', or other destructive operations, return 'ask' to state the assumption. Otherwise 'approve'."
         }
       ]
     }
@@ -199,7 +199,7 @@ file_path=$(echo "$input" | jq -r '.tool_input.file_path')
 
 # Run linter if applicable
 if [[ "$file_path" == *.js ]] || [[ "$file_path" == *.ts ]]; then
-  npx eslint "$file_path" 2>&1 || true
+  bunx eslint "$file_path" 2>&1 || true
 fi
 ```
 

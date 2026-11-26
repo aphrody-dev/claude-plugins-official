@@ -4,6 +4,8 @@ description: "Produces the make-to-order quote from the intake form, comparable 
 compatibility: "Requires none. Reads NetSuite or Infor M3 (or any ERP mapped into the dataset) for standard cost, actual cost on closed work orders and purchase prices, Microsoft 365 for prior quotes and templates, a planning export for shop load, and Autodesk Fusion for CAM-derived hours where connected. Runs on the intake form and pasted cost figures with no connector. Reads rates from an MFG_* variable or the plant profile, never asking each run. The quote uses the plant's own template."
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # Quote Build
 
 Pricing a make-to-order job means building up a cost and then applying

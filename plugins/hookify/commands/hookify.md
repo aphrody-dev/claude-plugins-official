@@ -1,8 +1,10 @@
 ---
 description: Create hooks to prevent unwanted behaviors from conversation analysis or explicit instructions
 argument-hint: Optional specific behavior to address
-allowed-tools: ["Read", "Write", "AskUserQuestion", "Task", "Grep", "TodoWrite", "Skill"]
+allowed-tools: ["Read", "Write", "", "Task", "Grep", "TodoWrite", "Skill"]
 ---
+
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
 
 # Hookify - Create Hooks from Unwanted Behaviors
 

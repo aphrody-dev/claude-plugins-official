@@ -4,6 +4,8 @@ argument-hint: <required-arg> [optional-arg]
 allowed-tools: [Read, Glob, Grep, Bash]
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # Example Command (Legacy `commands/` Format)
 
 > **Note:** This demonstrates the legacy `commands/*.md` layout. For new plugins, prefer the `skills/<name>/SKILL.md` directory format (see `skills/example-command/SKILL.md` in this plugin). Both are loaded identically — the only difference is file layout.

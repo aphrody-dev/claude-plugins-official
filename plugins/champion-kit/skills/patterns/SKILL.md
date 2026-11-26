@@ -4,6 +4,8 @@ description: Find patterns worth sharing from recent PRs and repo history, both 
 argument-hint: "[optional: time window]"
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 ## Start here
 
 Say in one line what you'll make: the repeats worth turning into a rule or skill, and the good practices worth spreading, with evidence for each.

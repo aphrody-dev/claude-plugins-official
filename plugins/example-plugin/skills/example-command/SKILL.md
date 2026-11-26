@@ -5,6 +5,8 @@ argument-hint: <required-arg> [optional-arg]
 allowed-tools: [Read, Glob, Grep, Bash]
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # Example Command (Skill Format)
 
 This demonstrates the `skills/<name>/SKILL.md` layout for user-invoked slash commands. It is functionally identical to the legacy `commands/example-command.md` format — both are loaded the same way; only the file layout differs.

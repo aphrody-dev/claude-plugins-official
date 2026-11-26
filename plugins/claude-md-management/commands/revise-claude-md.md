@@ -3,6 +3,8 @@ description: Update CLAUDE.md with learnings from this session
 allowed-tools: Read, Edit, Glob
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 Review this session for learnings about working with Claude Code in this codebase. Update CLAUDE.md with context that would help future Claude sessions be more effective.
 
 ## Step 1: Reflect

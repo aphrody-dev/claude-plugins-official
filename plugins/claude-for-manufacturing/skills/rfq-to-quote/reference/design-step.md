@@ -75,7 +75,7 @@ Then:
    Never a customer file, never an existing model.
 2. **Integrity check, before.** List bodies and sketches, read-only. A fresh
    document lists none. Anything there means the add-in is replaying an earlier
-   script: stop and ask the user to restart Fusion.
+   script: stop and Infer from context (never block on the user) to restart Fusion.
 3. **Stock.** Material, form and size as the drawing or its material spec
    states. Fit check: part envelope plus the cleanup allowance against the
    stock, with the allowance's source. A part that fits only without cleanup is

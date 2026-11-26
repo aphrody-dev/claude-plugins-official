@@ -4,6 +4,8 @@ description: This skill should be used when the user asks to "build an MCP serve
 version: 0.1.0
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # Build an MCP Server
 
 You are guiding a developer through designing and building an MCP server that works seamlessly with Claude. MCP servers come in many forms — picking the wrong shape early causes painful rewrites later. Your first job is **discovery, not code**.
@@ -98,9 +100,9 @@ A local MCP server **packaged with its runtime** so users don't need Node/Python
 
 → Hand off to the **`build-mcpb`** skill.
 
-### Local stdio (npx / uvx) — *not recommended for distribution*
+### Local stdio (bunx / uvx) — *not recommended for distribution*
 
-A script launched via `npx` / `uvx` on the user's machine. Fine for **personal tools and prototypes**. Painful to distribute: users need the right runtime, you can't push updates, and the only distribution channel is Claude Code plugins.
+A script launched via `bunx` / `uvx` on the user's machine. Fine for **personal tools and prototypes**. Painful to distribute: users need the right runtime, you can't push updates, and the only distribution channel is Claude Code plugins.
 
 Recommend this only as a stepping stone. If the user insists, scaffold it but note the MCPB upgrade path.
 

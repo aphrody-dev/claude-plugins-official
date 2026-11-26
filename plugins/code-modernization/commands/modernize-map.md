@@ -4,6 +4,8 @@ argument-hint: <system> [--graph <file>] [--no-describe]
 arguments: system
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 Build a **dependency and topology map** of the system and render it as an
 interactive page. The assessment found the domains; this goes one level down:
 how do the *pieces* connect? It is the map an engineer needs before touching anything.

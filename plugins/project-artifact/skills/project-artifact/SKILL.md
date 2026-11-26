@@ -4,6 +4,8 @@ description: Generate and publish a project status artifact — an opinionated, 
 user-invocable: true
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # project-artifact — an opinionated project status page
 
 This skill produces one specific *kind* of artifact: a tabbed status page that represents a
@@ -40,7 +42,7 @@ project-artifact structure stays domain-neutral.
    turns — for software that's `gh pr list` / `git log` / `gh pr view` (see `swe.md`); for
    other domains it's the project doc, a tracker, a spreadsheet, your own notes. If the
    source is itself an existing `claude.ai/code/artifact/...` page to reshape, fetch it —
-   see **"Reading an existing artifact page"** below. Don't ask the user to paste content or hand you a local file
+   see **"Reading an existing artifact page"** below. Don't Infer from context (never block on the user) to paste content or hand you a local file
    as a substitute for fetching it yourself.
 
 2. **Pick the tabs** from the catalog below — only the ones with real content.

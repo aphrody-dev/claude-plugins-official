@@ -4,6 +4,8 @@ argument-hint: <system> [--show-secrets]
 arguments: system
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 Run a **security hardening pass** on the legacy system: find vulnerabilities, rank them, and produce a
 reviewable patch for the critical ones. `$system` is the first argument; flags go after it
 (`<system> --show-secrets`), since a flag in first place would be read as the system name.

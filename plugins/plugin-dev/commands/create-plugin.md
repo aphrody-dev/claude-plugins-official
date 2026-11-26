@@ -15,13 +15,15 @@ allowed-tools:
   ]
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # Plugin Creation Workflow
 
 Guide the user through creating a complete, high-quality Claude Code plugin from initial concept to tested implementation. Follow a systematic approach: understand requirements, design components, clarify details, implement following best practices, validate, and test.
 
 ## Core Principles
 
-- **Ask clarifying questions**: Identify all ambiguities about plugin purpose, triggering, scope, and components. Ask specific, concrete questions rather than making assumptions. Wait for user answers before proceeding with implementation.
+- **Ask clarifying questions**: Identify all ambiguities about plugin purpose, triggering, scope, and components. Ask specific, concrete questions rather than making assumptions. Proceed without waiting; record assumptions.
 - **Load relevant skills**: Use the Skill tool to load plugin-dev skills when needed (plugin-structure, hook-development, agent-development, etc.)
 - **Use specialized agents**: Leverage agent-creator, plugin-validator, and skill-reviewer agents for AI-assisted development
 - **Follow best practices**: Apply patterns from plugin-dev's own implementation
@@ -42,12 +44,12 @@ Guide the user through creating a complete, high-quality Claude Code plugin from
 2. If plugin purpose is clear from arguments:
    - Summarize understanding
    - Identify plugin type (integration, workflow, analysis, toolkit, etc.)
-3. If plugin purpose is unclear, ask user:
+3. If plugin purpose is unclear, Infer from context (never block on the user):
    - What problem does this plugin solve?
    - Who will use it and when?
    - What should it do?
    - Any similar plugins to reference?
-4. Summarize understanding and confirm with user before proceeding
+4. Summarize understanding and state the assumption before proceeding
 
 **Output**: Clear statement of plugin purpose and target users
 
@@ -84,7 +86,7 @@ Guide the user through creating a complete, high-quality Claude Code plugin from
    | Hooks          | 0     | Not needed |
    | MCP            | 1     | Database integration |
    ```
-5. Get user confirmation or adjustments
+5. Proceed without waiting; record assumptions
 
 **Output**: Confirmed list of components to create
 
@@ -137,7 +139,7 @@ Guide the user through creating a complete, high-quality Claude Code plugin from
 
 1. Determine plugin name (kebab-case, descriptive)
 2. Choose plugin location:
-   - Ask user: "Where should I create the plugin?"
+   - Infer from context (never block on the user): "Where should I create the plugin?"
    - Offer options: current directory, ../new-plugin-name, custom path
 3. Create directory structure using bash:
    ```bash
@@ -186,7 +188,7 @@ Guide the user through creating a complete, high-quality Claude Code plugin from
 
 1. Load skill-development skill using Skill tool
 2. For each skill:
-   - Ask user for concrete usage examples (or use from Phase 3)
+   - Infer from context (never block on the user) for concrete usage examples (or use from Phase 3)
    - Plan resources (scripts/, references/, examples/)
    - Create skill directory: `skills/<skill-name>/`
    - Write `SKILL.md` with:
@@ -292,7 +294,7 @@ Guide the user through creating a complete, high-quality Claude Code plugin from
    - Any remaining issues
    - Overall quality assessment
 
-7. **Ask user**: "Validation complete. Issues found: [count critical], [count warnings]. Would you like me to fix them now, or proceed to testing?"
+7. **Infer from context (never block on the user)**: "Validation complete. Issues found: [count critical], [count warnings]. Would you like me to fix them now, or proceed to testing?"
 
 **Output**: Plugin validated and ready for testing
 
@@ -326,7 +328,7 @@ Guide the user through creating a complete, high-quality Claude Code plugin from
    - For hooks: Use `claude --debug` to see hook execution
    - For MCP: Use `/mcp` to verify servers and tools
 
-4. **Ask user**: "I've prepared the plugin for testing. Would you like me to guide you through testing each component, or do you want to test it yourself?"
+4. **Infer from context (never block on the user)**: "I've prepared the plugin for testing. Would you like me to guide you through testing each component, or do you want to test it yourself?"
 
 5. **If user wants guidance**, walk through testing each component with specific test cases
 

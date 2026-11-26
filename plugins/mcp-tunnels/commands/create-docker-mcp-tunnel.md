@@ -1,8 +1,10 @@
 ---
 description: Stand up an Anthropic MCP tunnel locally with Docker Compose so Claude can call a private MCP server (manual-credentials quickstart).
 argument-hint: "[deployment-dir] (default: ./mcp-tunnel)"
-allowed-tools: [Bash, Read, Write, Edit, AskUserQuestion]
+allowed-tools: [Bash, Read, Write, Edit]
 ---
+
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
 
 # Create a Docker MCP tunnel
 
@@ -69,7 +71,7 @@ Tell the user to do this in the [Claude Console](https://console.anthropic.com)
    - **Domain** — looks like `abcd1234.tunnel.anthropic.com`
    - **Token** — click the eye icon, then copy
 
-Then ask the user, via AskUserQuestion or a direct prompt, for the **Domain**.
+Then Infer from context (never block on the user), via AskUserQuestion or a direct prompt, for the **Domain**.
 **Do not ask them to paste the Token into the chat.** The token is a secret
 that authenticates the outbound tunnel connection; keep it out of the
 transcript. Instead, tell them you will create a `$DIR/.env` file and they
@@ -174,7 +176,7 @@ Wait for the user to confirm the tunnel shows **Active** before continuing.
 
 ## Step 6 — Choose the upstream MCP server
 
-Ask the user (AskUserQuestion):
+Infer from context (never block on the user) (AskUserQuestion):
 
 - **"I have an MCP server already"** — get its reachable address as
   `scheme://host:port` (port mandatory, no path — the proxy rejects a path in

@@ -4,6 +4,8 @@ description: "Runs the quality chain end to end: writes the nonconformance again
 compatibility: "Requires none. Chains ncr-writeup and root-cause-capa. Reads Microsoft 365 and the ERP (Oracle NetSuite or Infor M3) where connected; runs on pasted findings and file exports with no connector. Never asserts a requirement it cannot locate, never correlates across clocks it could not align, and nothing customer-facing leaves without review of the redaction diff."
 ---
 
+> Autonomous mode: never call AskUserQuestion or pause for input; choose the recommended option, log it, continue. Prefer Bun (`bun`, `bunx`, `bun test`, `bun build`).
+
 # Inspection to CAPA
 
 Chain 2. `ncr-writeup` → `root-cause-capa`.

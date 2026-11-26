@@ -82,7 +82,7 @@ MCP (Model Context Protocol) servers extend Claude's capabilities by connecting 
 | Mobile + Convex | `convex/react-native` in deps |
 | AI / chat / agent features on Convex | `@convex-dev/agent` in deps |
 
-**Value**: Claude can introspect the live deployment (tables, function specs, env vars, logs) and execute queries/mutations against it via tools like `tables`, `function-spec`, `data`, `run-once-query`, `logs`, `env list/set/get`. Run via `npx convex mcp start`.
+**Value**: Claude can introspect the live deployment (tables, function specs, env vars, logs) and execute queries/mutations against it via tools like `tables`, `function-spec`, `data`, `run-once-query`, `logs`, `env list/set/get`. Run via `bunx convex mcp start`.
 
 ### PostgreSQL MCP
 **Best for**: Direct PostgreSQL database access
